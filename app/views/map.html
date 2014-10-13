@@ -1,1 +1,44 @@
-<p>This is the map view.</p>
+<h1>MAPS</h1>
+<div id="map">XXXX</div>
+
+<script>
+
+    var map = L.map('map').setView([48.214746183331705, 16.32103845533587], 14);
+
+    L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'examples.map-i875mjb7'
+    }).addTo(map);
+
+
+    L.marker([48.214746183331705, 16.32103845533587]).addTo(map)
+            .bindPopup("<b>Hello world!</b><br />I am Redt6a popup.").openPopup();
+
+    L.circle([48.203930, 16.308631], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(map).bindPopup("I am a U-bah-station!");
+
+    L.polygon([
+        [48.223375, 16.315669],
+        [48.216456, 16.340904],
+        [48.207648, 16.309661]
+    ]).addTo(map).bindPopup("I am a polygon.");
+
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+    }
+
+    map.on('click', onMapClick);
+
+</script>
