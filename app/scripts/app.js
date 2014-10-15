@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/map.html',
         controller: 'MapCtrl'
       })
+      .when('/baum', {
+        templateUrl: 'views/baum.html',
+        controller: 'BaumCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
