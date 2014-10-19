@@ -18,7 +18,7 @@ angular.module('wienerbaeumeApp')
 
         $scope.calculate = function() {
             var A = $scope.zahl1;
-            var B = parseInt($scope.zahl2);
+            var B = $scope.zahl2;
             var C = 0;
 
             switch ($scope.art) {
