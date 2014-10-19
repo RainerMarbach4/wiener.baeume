@@ -1,15 +1,24 @@
-
+12345
 <div ng-controller="CalcCtrl">
-    <label>Zahl1:</label>
-    <input type="text" ng-model="zahl1" ng-change="calculate()">
-    <label>rechenart:</label>
-    <select ng-model="art" ng-options="operator for operator in operators" ng-change="calculate()"></select>
+    <form name="myForm" >
+        <label>Zahl1:</label>
+        <input type="number" name="zahl1" ng-model="zahl1" ng-change="calculate()" required>
+        <span class="error" ng-show="myForm.zahl1.$error.number">Not valid number!</span>
+        <span class="error" ng-show="myForm.zahl1.$error.required">Required!</span>
 
-    <label>Zahl2:</label>
-    <input type="text" ng-model="zahl2" ng-change="calculate()">
-    <button ng-click="calculate()">Calculate</button> <br/>
+        <label>rechenart:</label>
+        <select ng-model="art" ng-options="operator for operator in operators" ng-change="calculate()"></select>
 
-    <hr>
-    <h1>das ergebnis von {{zahl1}} {{art}} {{zahl2}} = {{result}}</h1>
+        <label>Zahl2:</label>
+        <input type="number" name="zahl2" ng-model="zahl2" ng-change="calculate()" required>
+        <span class="error" ng-show="myForm.zahl2.$error.number">Not valid number!</span>
+        <span class="error" ng-show="myForm.zahl2.$error.required">Required!</span>
+
+        <button ng-click="calculate()">Calculate</button> <br/>
+
+        <hr>
+        <h1>das ergebnis von {{zahl1}} {{art}} {{zahl2}} = {{result}}</h1>
+
+    </form>
 
 </div>
