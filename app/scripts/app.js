@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/baum.html',
         controller: 'BaumCtrl'
       })
+      .when('/calc', {
+        templateUrl: 'views/calc.html',
+        controller: 'CalcCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,15 @@
+
+<div ng-controller="CalcCtrl">
+    <label>Zahl1:</label>
+    <input type="text" ng-model="zahl1" ng-change="calculate()">
+    <label>rechenart:</label>
+    <select ng-model="art" ng-options="operator for operator in operators" ng-change="calculate()"></select>
+
+    <label>Zahl2:</label>
+    <input type="text" ng-model="zahl2" ng-change="calculate()">
+    <button ng-click="calculate()">Calculate</button> <br/>
+
+    <hr>
+    <h1>das ergebnis von {{zahl1}} {{art}} {{zahl2}} = {{result}}</h1>
+
+</div>

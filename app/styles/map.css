@@ -1,0 +1,15 @@
+.split-screen {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    width: 49%;
+    border: black dashed 1px;
+}
+
+.simple-border {
+    border: black dashed 1px;
+}
+
+.container {
+    width: 100%;
+}

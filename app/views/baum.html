@@ -1,1 +1,18 @@
-<p>This is the baum view.</p>
+<h2>erwähle mich</h2>
+<div class="split-screen">
+    <h3 ng-hide="isEditMode">Neues Buch anlegen</h3>
+    <h3 ng-show="isEditMode">Buch editieren</h3>
+    <form name="bookForm" novalidate>
+        [...]
+    </form>
+</div>
+<div class="split-screen">
+    <h3>Vorschau</h3>
+    <div class="simple-border padded"
+         ng-include="'views/about.html'">
+    </div>
+</div>
+        <script>
+            console.log('###############');
+
+        </script>
